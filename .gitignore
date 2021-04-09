@@ -14,7 +14,7 @@ config.py
 graph_1.png
 
 graph.png
-
+transformer_test.py
 model/
 picture/
 bupt_data/
