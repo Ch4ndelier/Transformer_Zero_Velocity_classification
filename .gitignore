@@ -12,9 +12,10 @@ utils/__pycache__
 .vscode/
 config.py
 graph_1.png
-
+g.png
 graph.png
 transformer_test.py
+transformer_test_2.py
 model/
 picture/
 bupt_data/
