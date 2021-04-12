@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 import config
-from transformer_zero_velocity import Transformer, Config
+from transformer_zero_velocity import Transformer
 from utils import dataloader
 
 
@@ -18,11 +18,8 @@ hidden_size = config.HIDDEN_SIZE
 num_layers = config.NUM_LAYERS
 
 # Define model
-print("Build LSTM model ..")
-config_t = Config()
-model = Transformer(
-    config_t
-)
+print("Build Transformer model ..")
+model = Transformer()
 
 model.to(device)
 loss_function = nn.NLLLoss()

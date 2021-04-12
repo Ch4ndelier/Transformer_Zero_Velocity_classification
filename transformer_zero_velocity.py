@@ -6,33 +6,11 @@ import torch.optim as optim
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
 import copy
-
-
-class Config(object):
-
-    """配置参数"""
-    def __init__(self,):
-        self.model_name = 'Transformer'
-        self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')   # 设备
-
-        self.dropout = 0.5                                              # 随机失活
-        self.require_improvement = 2000                                 # 若超过1000batch效果还没提升，则提前结束训练
-        self.n_vocab = 0                                                # 词表大小，在运行时赋值
-        self.num_epochs = 20                                            # epoch数
-        self.batch_size = 128                                           # mini-batch大小
-        self.pad_size = 32                                              # 每句话处理成的长度(短填长切)
-        self.learning_rate = 5e-4                                       # 学习率
-        self.embed = 6
-        self.dim_model = 6
-        self.hidden = 1024
-        self.last_hidden = 512
-        self.num_head = 3
-        self.num_encoder = 2
-        self.num_classes = 2
+import config
 
 
 class Transformer(nn.Module):
-    def __init__(self, config):
+    def __init__(self):
         super(Transformer, self).__init__()
         self.postion_embedding = PositionalEncoding(config.embed)
         self.encoder = Encoder(config.dim_model, config.num_head, config.hidden, config.dropout)
