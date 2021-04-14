@@ -1,5 +1,5 @@
 .DS_Store
-
+LICENSE
 test.py
 test.txt
 test_lstm.py
