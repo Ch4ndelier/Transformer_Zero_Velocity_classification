@@ -112,6 +112,7 @@ for epoch in range(num_epochs):
         val_loss_list.append(val_running_loss / num_dev_batches)
 
 # torch.save(model, "./model/tt")
+'''
 plt.plot(epoch_list, val_loss_list)
 plt.xlabel("# of epochs")
 plt.ylabel("Loss")
@@ -125,6 +126,6 @@ plt.ylabel("Accuracy")
 plt.title("LSTM: Accuracy vs # epochs")
 plt.savefig('graph_1.png')
 plt.show()
-
+'''
 # print("max val accuracy: ", max(val_acc))
 # torch.save(model, './model/test.pkl')
